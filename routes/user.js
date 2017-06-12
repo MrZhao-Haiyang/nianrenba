@@ -1,12 +1,45 @@
 let express=require("express");
 let router=express.Router();
-router.get("/signup",function(req,res){
-    res.send("signUp")
+let multer=require("multer");
+let uploads=multer({dest:"public/uploads"});
+let {checkLogin,checkNotLogin}=require("../auth");
+let {User}=require("../model/index");
+router.get("/signup",checkNotLogin,function(req,res){
+    res.render("user/signup",{title:"用户注册"});
 });
-router.get("/signin",function(req,res){
-    res.send("signIn")
+router.post("/signup", uploads.single("avatar") ,function(req,res){
+    let user=req.body;
+    user.avatar=`uploads/${req.file.filename}`;
+    console.log(uploads);
+    User.create(user,function(err,doc){
+        if(err){
+            res.redirect("back");
+        }else{
+            res.redirect("/user/signin")
+        }
+    });
+})
+router.get("/signin",checkNotLogin,function(req,res){
+    res.render("user/signin",{title:"用户登录"});
 });
-router.get("/signout",function(req,res){
-    res.send("signOut")
+router.post("/signin",function(req,res){
+    let user=req.body;
+    User.findOne(user,function(err,doc){
+        if(err){
+            res.redirect("back");
+        }else {
+            if(doc){
+                req.session.user=doc;
+                res.redirect("/");
+            }else{
+                res.redirect("back");
+            }
+        }
+    })
+})
+router.get("/signout",checkLogin,function(req,res){
+    req.session.user=null;
+    res.redirect("/");
+
 });
 module.exports=router;

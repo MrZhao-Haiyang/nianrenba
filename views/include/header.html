@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="left"></div>
+        <div class="middle">
+            <%if(user){%>
+            <span class="signIn"><a href="/article/add">发布</a></span>
+            <span class="signUp"><a href="/user/signout">退出</a></span>
+            <%}else{%>
+            <span class="signIn"><a href="/user/signin">登录</a></span>
+            <span class="signUp"><a href="/user/signup">注册</a></span>
+            <%}%>
+
+        </div>
+        <div class="right"></div>
+    </div>
+</div>
+<div class="nav" id="nav">
+    <div class="wrapper">
+        <ul>
+            <li><a href="###">最新</a></li>
+            <li><a href="###">爆笑</a></li>
+            <li><a href="###">段子</a></li>
+            <li><a href="###">内涵</a></li>
+            <li><a href="###">搞笑gif</a></li>
+            <li><a href="###">妹子</a></li>
+        </ul>
+        <form>
+            <input placeholder="请输入关键字" type="text" name="search" autocomplete="off">
+            <button></button>
+        </form>
+    </div>
+</div>
+<div class="main">
+    <div class="main-left">

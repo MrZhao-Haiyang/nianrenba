@@ -1,0 +1,31 @@
+<% include ../include/header.html %>
+<div class="sign">
+    <div class="top">
+        <span>发布</span>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="group">
+            <label for="title">标题:</label>
+            <input type="text" id="title" name="title" placeholder="请输入标题" autocomplete="off">
+        </div>
+        <div class="group add">
+            <label for="content">内&nbsp&nbsp&nbsp&nbsp容:</label>
+            <textarea name="content" id="content" cols="28" rows="5" placeholder="请输入内容"></textarea>
+        </div>
+        <div class="group">
+            <label for="photo">图&nbsp&nbsp&nbsp&nbsp片：</label>
+            <input type="file" id="photo" name="photo">
+        </div>
+        <div class="group">
+            <input type="radio" class="tag" name="tag" value="爆笑">爆笑
+            <input type="radio" class="tag" name="tag" value="段子">段子
+            <input type="radio" class="tag" name="tag" value="内涵">内涵
+            <input type="radio" class="tag" name="tag" value="搞笑gif">搞笑gif
+            <input type="radio" class="tag" name="tag" value="妹子">妹子
+        </div>
+        <div class="group">
+            <button type="submit">发布</button>
+        </div>
+    </form>
+</div>
+<% include ../include/footer.html %>

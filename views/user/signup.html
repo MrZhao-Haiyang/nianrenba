@@ -1,0 +1,25 @@
+<% include ../include/header.html %>
+<div class="sign">
+    <div class="top">
+        <span>粘友注册</span>
+        <span class="top-right"><a href="/user/signin">粘友注册已有帐号？现在登录</a></span>
+    </div>
+    <form method="post" enctype="multipart/form-data">
+        <div class="group">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名" autocomplete="off">
+        </div>
+        <div class="group">
+            <label for="password">密&nbsp&nbsp&nbsp&nbsp码:</label>
+            <input type="password" id="password" name="password" placeholder="请输入密码" autocomplete="off">
+        </div>
+        <div class="group">
+            <label for="avatar">头&nbsp&nbsp&nbsp&nbsp像：</label>
+            <input type="file" id="avatar" name="avatar">
+        </div>
+        <div class="group">
+            <button type="submit">注册</button>
+        </div>
+    </form>
+</div>
+<% include ../include/footer.html %>
