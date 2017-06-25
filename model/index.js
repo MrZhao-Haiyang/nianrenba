@@ -1,5 +1,5 @@
 let mongoose=require("mongoose");
-mongoose.connect("mongodb://127.0.0.1/nianrenba");
+mongoose.connect(require('../config').dbUrl);
 let userSchema=new mongoose.Schema({
     username:String,
     password:String,
@@ -12,7 +12,9 @@ let articleSchema=new mongoose.Schema({
     photo:String,
     tag:String,
     createAt:{type:String,default:Date.now()},
-    user:{type:mongoose.Schema.Types.ObjectId,ref:"User"}
+    user:{type:mongoose.Schema.Types.ObjectId,ref:"User"},
+    up:{type:Number,default:0},
+    down:{type:Number,default:0}
 })
 let Article=mongoose.model("Article",articleSchema);
 module.exports.User=User;

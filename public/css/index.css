@@ -292,6 +292,11 @@ body{
     width: 100%;
     height: 50px;
     position: relative;
+    margin-top:20px;
+}
+.article .article-footer .bdsharebuttonbox{
+    position: absolute;
+    left: 20px;
 }
 .article .article-footer .btn{
     width: 64px;
@@ -329,5 +334,26 @@ body{
     line-height: 50px;
     margin:0 auto;
     text-align: center;
+    color: #fff;
+}
+#page{
+    width: 100%;
+    text-align: center;
+    margin:10px 0;
+}
+#page a{
+    display: inline-block;
+    background: #F0F3F9;
+    padding: 0 5px;
+    text-decoration: none;
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    margin: 0 2px;
+    border:1px solid #3E9803;
+    color:#3E9803;
+}
+#page a.cur{
+    background: #3E9803;
     color: #fff;
 }
